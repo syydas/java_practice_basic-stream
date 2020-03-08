@@ -80,8 +80,10 @@ public class App {
                 .collect(Collectors.toList());
     }
 
+    // 5.有没有交易员是在米兰工作的
     public static boolean hasMilanTrader(List<Transaction> transactions) {
-        return false;
+        return transactions.stream()
+                .anyMatch(transaction -> "Milan".equals(transaction.getTrader().getCity()));
     }
 
     public static List<Integer> getCambridgeTransactionsValue(List<Transaction> transactions) {
