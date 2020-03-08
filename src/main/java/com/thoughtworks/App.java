@@ -55,8 +55,9 @@ public class App {
 
     // 2.交易员都在哪些不同的􏱜城市工作过
     public static List<String> getTradersCity(List<Transaction> transactions) {
-        return transactions.stream().map(transaction -> transaction.getTrader()
-                .getCity()).collect(Collectors.toList());
+        return transactions.stream().map(transaction -> transaction.getTrader().getCity())
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     public static List<Trader> getCambridgeTraders(List<Transaction> transactions) {
