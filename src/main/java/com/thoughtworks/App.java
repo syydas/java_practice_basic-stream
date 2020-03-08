@@ -71,6 +71,7 @@ public class App {
                 .collect(Collectors.toList());
     }
 
+    // 4.返回所有交易员的姓名字符串，按字母顺序排序
     public static List<String> getTradersName(List<Transaction> transactions) {
         return Collections.emptyList();
     }
