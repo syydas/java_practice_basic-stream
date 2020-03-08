@@ -102,7 +102,10 @@ public class App {
                 .orElse(0);
     }
 
+    // 8.返回交易额最小的交易
     public static Transaction getMinTransaction(List<Transaction> transactions) {
-        return null;
+        return transactions.stream()
+                .min(Comparator.comparingInt(Transaction::getValue))
+                .orElseThrow(NoClassDefFoundError::new);
     }
 }
