@@ -94,8 +94,12 @@ public class App {
                 .collect(Collectors.toList());
     }
 
+    // 7.所有交易中，最高的交易额是多少
     public static int getMaxTransactionValue(List<Transaction> transactions) {
-        return 0;
+        return transactions.stream()
+                .map(Transaction::getValue)
+                .max(Comparator.comparing(value -> value))
+                .orElse(0);
     }
 
     public static Transaction getMinTransaction(List<Transaction> transactions) {
